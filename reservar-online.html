@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Programa tu servicio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <header class="wix-topbar">
+    <div class="wix-strip"></div>
+
+    <a class="wix-top-cta" href="#formulario-cita">Haz una cita</a>
+
+    <div class="wix-brandspace">
+      <div class="wix-brandleft">
+        <div class="wix-brandname">CLÍNICA DENTAL</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="booking">
+    <div class="booking__wrap">
+      <a class="booking__back" href="index.html">← Volver</a>
+
+      <h1 class="booking__title">Programa tu servicio</h1>
+      <p class="booking__sub">
+        Revisa nuestra disponibilidad y reserva la fecha y hora que más te convengan
+      </p>
+
+      <div class="booking__grid">
+
+        
+        <section class="bk-card">
+          <div class="bk-head">
+            <h2 class="bk-h2">Selecciona fecha y hora</h2>
+          </div>
+
+          <div class="bk-month">
+            <button class="bk-nav" id="prevMonth" aria-label="Mes anterior" type="button">‹</button>
+            <div class="bk-month__label" id="monthLabel">Febrero 2026</div>
+            <button class="bk-nav" id="nextMonth" aria-label="Mes siguiente" type="button">›</button>
+          </div>
+
+          <div class="bk-dow">
+            <span>dom</span><span>lun</span><span>mar</span><span>mié</span><span>jue</span><span>vie</span><span>sáb</span>
+          </div>
+
+          <div class="bk-days" id="daysGrid">
+            <!-- JS pinta los días -->
+          </div>
+        </section>
+
+        <!-- CENTER: Disponibilidad -->
+        <section class="bk-card">
+          <div class="bk-head bk-head--row">
+            <div>
+              <div class="bk-muted">Zona horaria:</div>
+              <div class="bk-tz">
+                hora estándar de Israel (GMT+2) <span class="bk-caret">▾</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bk-block">
+            <div class="bk-muted">
+              Disponibilidad para: <strong id="forDate">viernes, 6 de febrero</strong>
+            </div>
+            <div class="bk-empty" id="availability">No hay disponibilidad</div>
+          </div>
+
+          <button class="bk-primary" type="button">
+            Próxima sesión disponible
+          </button>
+        </section>
+
+        <!-- RIGHT: Servicio -->
+        <section class="bk-card">
+          <div class="bk-head">
+            <h2 class="bk-h2">Detalles del servicio</h2>
+          </div>
+
+          <div class="bk-service">
+            <div class="bk-service__name" id="serviceName">Exámenes de rutina</div>
+            <button class="bk-link" type="button">
+              Más detalles <span class="bk-caret">▾</span>
+            </button>
+          </div>
+
+          <button class="bk-next" type="button" disabled>Siguiente</button>
+        </section>
+
+      </div>
+
+    
+      <section class="bk-card" id="formulario-cita" style="grid-column: 1 / -1;">
+        <div class="bk-head">
+          <h2 class="bk-h2">Completa tus datos para confirmar</h2>
+        </div>
+
+        <div class="bk-block">
+          <p class="bk-muted" style="margin:0;">
+            Déjanos tu información y te confirmamos la cita por WhatsApp o correo. Sin letra chiquita.
+          </p>
+        </div>
+
+        <form class="bk-form" action="#" method="post" novalidate>
+          <div class="bk-block" style="display:grid; gap:14px; grid-template-columns: 1fr 1fr;">
+            <div>
+              <label class="bk-muted" for="fullName">Nombre completo</label>
+              <input id="fullName" name="fullName" type="text" required
+                     placeholder="Escribe tu nombre"
+                     style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid #e7e7e7; outline:none;">
+            </div>
+
+            <div>
+              <label class="bk-muted" for="phone">Teléfono / WhatsApp</label>
+              <input id="phone" name="phone" type="tel" required
+                     placeholder="Ej. 442 000 0000"
+                     style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid #e7e7e7; outline:none;">
+            </div>
+
+            <div>
+              <label class="bk-muted" for="email">Correo</label>
+              <input id="email" name="email" type="email" required
+                     placeholder="tucorreo@email.com"
+                     style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid #e7e7e7; outline:none;">
+            </div>
+
+            <div>
+              <label class="bk-muted" for="service">Servicio</label>
+              <select id="service" name="service" required
+                      style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid #e7e7e7; outline:none; background:#fff;">
+                <option value="">Selecciona un servicio</option>
+                <option>Odontología general</option>
+                <option>Ortodoncia</option>
+                <option>Urgencias dentales</option>
+                <option>Limpieza dental</option>
+                <option>Blanqueamiento</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="bk-muted" for="date">Fecha preferida</label>
+              <input id="date" name="date" type="date"
+                     style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid #e7e7e7; outline:none;">
+            </div>
+
+            <div>
+              <label class="bk-muted" for="time">Hora preferida</label>
+              <input id="time" name="time" type="time"
+                     style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid #e7e7e7; outline:none;">
+            </div>
+          </div>
+
+          <div class="bk-block">
+            <label class="bk-muted" for="notes">Motivo / comentario (opcional)</label>
+            <textarea id="notes" name="notes" rows="4"
+                      placeholder="Ej. dolor, inflamación, revisión, etc."
+                      style="width:100%; padding:12px 14px; border-radius:12px; border:1px solid #e7e7e7; outline:none; resize:vertical;"></textarea>
+          </div>
+
+          <div class="bk-block" style="display:flex; gap:10px; align-items:flex-start;">
+            <input id="consent" name="consent" type="checkbox" required style="margin-top:4px;">
+            <label for="consent" class="bk-muted" style="line-height:1.3;">
+              Acepto que me contacten para confirmar la cita y recibir información relacionada con el servicio.
+            </label>
+          </div>
+
+          <div class="bk-block" style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button class="bk-primary" type="submit">Confirmar solicitud</button>
+            <button class="bk-link" type="button" onclick="location.href='index.html#contacto'">
+              Prefiero contactar por la página
+            </button>
+          </div>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  
+  <footer class="footer">
+    <div class="footer__wrap">
+      <div class="footer__col">
+        <h4 class="footer__brand">CLÍNICA DENTAL</h4>
+        <p class="footer__text">
+          Cuidamos tu sonrisa con atención profesional,
+          tecnología moderna y trato humano.
+        </p>
+      </div>
+
+      <div class="footer__col">
+        <h5 class="footer__title">Contacto</h5>
+        <p class="footer__link">
+          Av. Los Rosales 122<br>
+          Madrid
+        </p>
+        <p class="footer__link">Tel: 914-123-456</p>
+        <p class="footer__link">info@misitio.com</p>
+      </div>
+
+      <div class="footer__col">
+        <h5 class="footer__title">Horario</h5>
+        <p class="footer__link">
+          Lun–Vie 9:00 – 19:00<br>
+          Sáb 9:00 – 14:00
+        </p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      © 2026 Clínica Dental — Todos los derechos reservados
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
